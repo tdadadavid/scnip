@@ -9,9 +9,9 @@ import (
 // All the sorting methods names
 const (
 	BY_PRICE_HIGH_TO_LOW = "Price (Low to High)"
-  BY_POPULARITY = "Popularity (Sales per View)"
-	BY_NEWSET = "Newest First"
-	BY_APLHABETS = "Alphabetical (Z to A)"
+	BY_POPULARITY        = "Popularity (Sales per View)"
+	BY_NEWSET            = "Newest First"
+	BY_APLHABETS         = "Alphabetical (Z to A)"
 )
 
 // Product represents a product in the catalog
@@ -169,7 +169,7 @@ func (c *ProductCatalog) GetSortedProducts(sorterName string) ([]Product, error)
 	if !exists {
 		return nil, fmt.Errorf("sorter '%s' not found", sorterName)
 	}
-	
+
 	return sorter.Sort(c.products), nil
 }
 
